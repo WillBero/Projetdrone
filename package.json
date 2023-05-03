@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@harleylara/tello-js": "^1.0.4"
+  }
+}
