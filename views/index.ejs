@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liste des zones</title>
+</head>
+<body>
+  <h1>Liste des zones</h1>
+  <ul>
+    <% for (let i = 0; i < zones.length; i++) { %>
+      <li>Zone <%= zones[i].id_location %> <%= zones[i].rack %><%= zones[i].line %><%= zones[i].row %></li>
+    <% } %>
+  </ul>
+
+
+  <h1>Choisis une zone</h1>
+  <form action="/vol" method="post">
+    <% for (let i = 0; i < zones.length; i++) { %>
+      <label for="<%= zones[i].id %>">Zone <%= zones[i].rack %><%= zones[i].line %><%= zones[i].row %></label>
+      <input type="radio" id="<%= zones[i].id_location %>" name="zoneId" value="<%= zones[i].id_location %>">
+    <% } %>
+    <input type="submit" value="Afficher les coordonnées">
+  </form>
+  
+</body>
+</html>
